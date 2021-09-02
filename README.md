@@ -22,10 +22,9 @@ You will most likely need to capture your own IR codes and if you get random cap
 I swapped to a TSOP4136 (36Khz center frequency) IR receiver hardwired to the ESP controller and everything burst into life. 
 
 To capture IR codes I recommend you use the example sketch in the library called "IRrecvDumpV2". It's what worked for me. The switch and the LED shown in the image below were only for developement and debugging.
-![2_Developement_setup](https://user-images.githubusercontent.com/20883620/131769679-007e9228-ec3f-4c8a-888a-9c588138fe0e.jpg)
+![image](https://user-images.githubusercontent.com/20883620/131914870-c079865c-026f-4c96-882f-d0af76dda977.png)
 ### and this is my final setup using an ESP32
-
-![image](https://user-images.githubusercontent.com/20883620/131770408-c979e788-0745-4e63-940a-e35e04b5d6c3.png)
+![image](https://user-images.githubusercontent.com/20883620/131915077-1aee791e-1459-45b9-8441-4c00f3d31061.png)
 
 ### (2) Handling a large IR code library
 The HTML and CSS are the most time consuming and to help avoid incorrectly assigning ID's and IR codes to the wrong buttons I added them as comments to the IR library (irCodes.h) The DOM ID is the array index position. As the remotes are numerically grouped this also let me do a simple "IF" statement for switch case encoder assignment. The [core code-source project](https://github.com/e-tinkers/esp32_ir_remote) used IR header hex values that may work for you but were not optimal in my case.
