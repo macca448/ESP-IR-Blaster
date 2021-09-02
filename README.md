@@ -27,4 +27,4 @@ The HTML and CSS are the most time consuming and to help avoid incorrectly assig
 ### (3) Javascript and Fontawesome
 In my project I'm not hosting the javascript or Font Awesome libraries so internet access is required. 
 
-https://youtu.be/qXwKDf_D-9c
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qXwKDf_D-9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
