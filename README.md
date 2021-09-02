@@ -18,7 +18,8 @@ Once you have support for your developement board installed you will need to ins
 You will most likely need to capture your own IR codes and if you get random captures (as I did) I strongly recommend you read [this blog](https://arduinoplusplus.wordpress.com/2015/11/22/large-button-remote-control-part-1-design-and-prototyping/) for the answer. In a nutshell it comes down to IR reciever center carrier frequency and what frequency the remote you are capturing uses. IN my case both the Sky and Panasonic used 37Khz and the standard Arduino IR receiver has a center frequency of 38Khz. I swapped to a TSOP4136 (36Khz center frequency) hardwired and everything burst into life. 
 The switch and the LED shown in the image below were only for developement and debugging.
 ![2_Developement_setup](https://user-images.githubusercontent.com/20883620/131769679-007e9228-ec3f-4c8a-888a-9c588138fe0e.jpg)
-This is my final setup on an ESP32
+### and is my final setup using an ESP32
+
 ![image](https://user-images.githubusercontent.com/20883620/131770408-c979e788-0745-4e63-940a-e35e04b5d6c3.png)
 
 ### (2) Handling a large IR code library
