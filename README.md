@@ -2,7 +2,7 @@
 Use an ESP8266 or ESP32 to create a WiFi Infrared Blaster and send code using your mobile phone or a tablet
 
 ## Credits:
-Project that gave me the core code for Arduino sketch and ajax script <https://github.com/e-tinkers/esp32_ir_remote>
+[This is the Project](<https://github.com/e-tinkers/esp32_ir_remote>) that gave me the core code for Arduino sketch and ajax scrip
 
 ## Libraries needed:
 [IRremoteESP8266](https://github.com/crankyoldgit/IRremoteESP8266)
