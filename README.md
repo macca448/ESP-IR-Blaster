@@ -32,4 +32,5 @@ The HTML and CSS are the most time consuming and to help avoid incorrectly assig
 ### (3) Javascript and Fontawesome
 In my project I'm not hosting the javascript or Font Awesome libraries so internet access is required. 
 
-### [Watch a demo on YouTube](https://www.youtube.com/embed/qXwKDf_D-9c)
+### Watch the video demo
+[![Watch the video](https://img.youtube.com/vi/qXwKDf_D-9c/maxresdefault.jpg)](https://youtu.be/qXwKDf_D-9c)
