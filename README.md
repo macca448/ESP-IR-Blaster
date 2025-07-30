@@ -1,21 +1,27 @@
 ## Update 30 July 2025
-#### Have updated sketch's to use current libraries with ESP32 Arduion core v3.3.0 in Arduino IDE v2.3.6 as follows
+
+#### Update for ESP32 Arduino core v3.3.0 in Arduino IDE v2.3.6 as follows
   1.  My IRremoteESP8266 library patch v2.8.7 located [here](https://github.com/macca448/IRremoteESP8266)
   2.  ElegantOTA v3.1.7 via Arduino IDE
   3.  ESPAsyncWebServer v3.7.10 via Arduino IDE
   4.  Async_TCP v3.4.5 (dependancy of ESPAsyncWebServer) via IDE
   5.  ArduinoJson v7.4.2 ia IDE
 
-NOTE 1: There is a compile warning about `StaticJsonDocument` but it's benign so you can ignore.
+#### for ESP8266 Arduino core v3.1.2 in Arduino IDE v2.3.6 as follows
+  1.  IRremoteESP8266 v2.8.6 from IDE or my patch v2.8.7 located [here](https://github.com/macca448/IRremoteESP8266)
+  2.  ElegantOTA v3.1.7 via Arduino IDE
+  3.  ESPAsyncWebServer v3.7.10 via Arduino IDE
+  4.  ESPAsyncTCP v1.2.2 (dependancy of ESPAsyncWebServer) via IDE
+  5.  ArduinoJson v7.4.2 ia IDE
 
-NOTE 2: Currently sthe sketch's only support ESP32
+#### NOTES: 
+  1.  There is a compile warning about `StaticJsonDocument` but it's benign so you can ignore it.
+  2.  Hardware tested both `IRrecv` and `IRsend` on ESP32 only at this time.
 
-NOTE 3: Compile Testing ESP8266 it complains about SPIFFS being depreciated.
+## End Update
 
 <br>
 
-To-do : Create sketch's for ESP8266 using LittleFS for data folder files.
-#### End Update
 
 # ESP-IR-Blaster
 Use an ESP8266 or ESP32 to create a WiFi Infrared Blaster and send code using your mobile phone or a tablet
