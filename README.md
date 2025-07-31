@@ -1,22 +1,19 @@
-## Update 30 July 2025
+## Update 31 July 2025
+- Currently the IDE version of IRremoteESP8266 (v3.8.6) does not support the ESP32 Arduino core V3.x. If you are using an ESP32 I have a patched version (v3.8.7) you can download and manually install from [here](https://github.com/macca448/IRremoteESP8266/tree/esp32-arduino-core-v3-patch)
 
-#### Update for ESP32 Arduino core v3.3.0 in Arduino IDE v2.3.6 as follows
-  1.  My IRremoteESP8266 library patch v2.8.7 located [here](https://github.com/macca448/IRremoteESP8266)
-  2.  ElegantOTA v3.1.7 via Arduino IDE
-  3.  ESPAsyncWebServer v3.7.10 via Arduino IDE
-  4.  Async_TCP v3.4.5 (dependancy of ESPAsyncWebServer) via IDE
-  5.  ArduinoJson v7.4.2 ia IDE
+### Update for ESP32 Arduino core v3.3.0 in Arduino IDE v2.3.6 as follows
+  1.  My IRremoteESP8266 library [patch v2.8.7](https://github.com/macca448/IRremoteESP8266/tree/esp32-arduino-core-v3-patch)
+  2.  ElegantOTA v3.1.7 via Arduino IDE library manager
+  3.  ESPAsyncWebServer v3.7.10 via Arduino IDE library manager
+  4.  Async_TCP v3.4.6 (dependancy of ESPAsyncWebServer) via Arduino IDE library manager
+  5.  ArduinoJson v7.4.2 via Arduino IDE library manager
 
 #### for ESP8266 Arduino core v3.1.2 in Arduino IDE v2.3.6 as follows
-  1.  IRremoteESP8266 v2.8.6 from IDE or my patch v2.8.7 located [here](https://github.com/macca448/IRremoteESP8266)
-  2.  ElegantOTA v3.1.7 via Arduino IDE
-  3.  ESPAsyncWebServer v3.7.10 via Arduino IDE
-  4.  ESPAsyncTCP v1.2.2 (dependancy of ESPAsyncWebServer) via IDE
-  5.  ArduinoJson v7.4.2 ia IDE
-
-#### NOTES: 
-  1.  There is a compile warning about `StaticJsonDocument` but it's benign so you can ignore it.
-  2.  Hardware tested both `IRrecv` and `IRsend` on ESP32 only at this time.
+  1.  IRremoteESP8266 v2.8.6 from IDE or my [patch v2.8.7](https://github.com/macca448/IRremoteESP8266/tree/esp32-arduino-core-v3-patch)
+  2.  ElegantOTA v3.1.7 via Arduino IDE library manager
+  3.  ESPAsyncWebServer v3.7.10 via Arduino IDE library manager
+  4.  ESPAsyncTCP v1.2.2 (dependancy of ESPAsyncWebServer)via Arduino IDE library manager
+  5.  ArduinoJson v7.4.2 via Arduino IDE library manager
 
 ## End Update
 
