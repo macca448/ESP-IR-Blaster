@@ -4,7 +4,17 @@ Use an ESP8266 or ESP32 to create a WiFi Infrared Blaster and send code using a 
 ## Sketch Source Project:
 [This is the Project](https://github.com/e-tinkers/esp32_ir_remote) that gave me the required functionality and AJAX script.
 
-**Note:** I stripped out all "HTTP_GET" functionality in my project as I only wanted to send "HTTP_POST" commands. If you need to pull data into your HTML like sensor readings then you'll need to look at the [core code source project](https://github.com/e-tinkers/esp32_ir_remote) for that detail.
+**Note:** I stripped out all "HTTP_GET" functionality in my project as I only wanted to send "HTTP_POST" commands. If you need to pull data into your HTML like sensor readings then you'll need to look at the [core code source project](https://github.com/e-tinkers/esp32_ir_remote) for that detail.  
+
+## Sketch Flow Basics
+In my sketch there is just a single task being the  `"void onBody()"` callback and this function is triggered by a HTML button press. There is javaScript that creates the `JASON` string when a button is pressed. In the string is the button's HTML ID and the button's description text. This description string isn't needed for functionality but was very handy debugging as I could see if the IR code emitted matched the function printed.  
+
+The button ID is the key as all the IR codes for the buttons live in a single array and the HTML ID is the array index position of the IR code for the button that was pressed. As there are three (3) protocols `“NEC, PANASONIC and RCMM”` the array is sorted in groups so I can assign protocol by ID/index number.  
+
+This means on a button Press > Stringify ID and Name > Pass to “onBody” callback > parse JSON > check ID and set protocol > pass the switch case to emit IR code.
+
+**Minor stuff:** There are near 100 buttons and I used 9 x Buttons that load model pop-ups with buttons grouped by device and function. I call “FontAwesome” externally so I need internet access and this is for button icons. 
+At the bottom of this page is a link to a short video showing the ESP-IR-Blaster in operation.
 
 <br>
 
