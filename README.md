@@ -1,41 +1,34 @@
-## Update 31 July 2025
-- Currently the IDE version of IRremoteESP8266 (v3.8.6) does not support the ESP32 Arduino core V3.x. If you are using an ESP32 I have a patched version (v3.8.7) you can download and manually install from [here](https://github.com/macca448/IRremoteESP8266/tree/esp32-arduino-core-v3-patch)
+# ESP-IR-Blaster
+Use an ESP8266 or ESP32 to create a WiFi Infrared Blaster and send code using a browser enabled device on your local network like a mobile phone, a tablet or even a Laptop. **IMPORTANT** Please read the [update notes](https://github.com/macca448/ESP-IR-Blaster/blob/main/update-notes.md) for current library requirements
 
-### Update for ESP32 Arduino core v3.3.0 in Arduino IDE v2.3.6 as follows
-  1.  My IRremoteESP8266 library [patch v2.8.7](https://github.com/macca448/IRremoteESP8266/tree/esp32-arduino-core-v3-patch)
-  2.  ElegantOTA v3.1.7 via Arduino IDE library manager
-  3.  ESPAsyncWebServer v3.7.10 via Arduino IDE library manager
-  4.  Async_TCP v3.4.6 (dependancy of ESPAsyncWebServer) via Arduino IDE library manager
-  5.  ArduinoJson v7.4.2 via Arduino IDE library manager
+## Sketch Source Project:
+[This is the Project](https://github.com/e-tinkers/esp32_ir_remote) that gave me the required functionality and AJAX script.
 
-#### for ESP8266 Arduino core v3.1.2 in Arduino IDE v2.3.6 as follows
-  1.  IRremoteESP8266 v2.8.6 from IDE or my [patch v2.8.7](https://github.com/macca448/IRremoteESP8266/tree/esp32-arduino-core-v3-patch)
-  2.  ElegantOTA v3.1.7 via Arduino IDE library manager
-  3.  ESPAsyncWebServer v3.7.10 via Arduino IDE library manager
-  4.  ESPAsyncTCP v1.2.2 (dependancy of ESPAsyncWebServer)via Arduino IDE library manager
-  5.  ArduinoJson v7.4.2 via Arduino IDE library manager
-
-## End Update
+**Note:** I stripped out all "HTTP_GET" functionality in my project as I only wanted to send "HTTP_POST" commands. If you need to pull data into your HTML like sensor readings then you'll need to look at the [core code source project](https://github.com/e-tinkers/esp32_ir_remote) for that detail.
 
 <br>
 
-
-# ESP-IR-Blaster
-Use an ESP8266 or ESP32 to create a WiFi Infrared Blaster and send code using your mobile phone or a tablet
-
-## Core code source project:
-[This is the Project](https://github.com/e-tinkers/esp32_ir_remote) that gave me the core code for the Arduino sketch and the ajax script.
-### Note:
-I stripped out all "HTTP_GET" functionality in my project as I only wanted to send "HTTP_POST" commands. If you need to pull data into your HTML like sensor readings then you'll need to look at the [core code source project](https://github.com/e-tinkers/esp32_ir_remote) for that detail.
-
 ## Arduino IDE libraries and tools:
+
+First you need to make sure the Arduino IDE has support for your [ESP8266](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/) or [ESP32](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/) library installed.
+
+**IMPORTANT** Please read the [update notes](https://github.com/macca448/ESP-IR-Blaster/blob/main/update-notes.md) for current library requirements as a patch may be required if you are using an ESP32
+
 [IRremoteESP8266](https://github.com/crankyoldgit/IRremoteESP8266) This library has an impressive list of supported protocols.
 
+[ESPAsyncWebServer](https://github.com/ESP32Async/ESPAsyncWebServer) Important if you are using sensor data as you can update values without full page reloads
+  
 [ArduinoJson](https://github.com/bblanchon/ArduinoJson) to facilitate the AJAX exchanges
 
-You need to make sure the Arduino IDE has support for the [ESP8266](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/) or the [ESP32](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/) Dev boards installed.
+[ElegantOTA](https://github.com/ayushsharma82/ElegantOTA) Enables `Over The Air` updates to your controller
 
-Plus SPIFFS upload support for the Arduino IDE is also needed. Here are links to instructions for the [ESP32](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/) and the [ESP8266](https://randomnerdtutorials.com/install-esp8266-filesystem-uploader-arduino-ide/) for adding this tool.
+
+
+### For Arduino IDE v1.8.19
+This older IDE still works and has two JAVA plug-ins that allow easy `data`folder upload to your `HTML` content to the controller. Here are links to instructions for the [ESP32](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/) and the [ESP8266](https://randomnerdtutorials.com/install-esp8266-filesystem-uploader-arduino-ide/) for adding this tool.
+
+### For Arduino IDE v2.x
+You'll note that I have `OTA` sample sketch's for both the `ESP8266` using `LittleFS` and `ESP32` using `SPIFFS`.
 
 ## Tips
 ### (1) Randomness when capturing IR codes
