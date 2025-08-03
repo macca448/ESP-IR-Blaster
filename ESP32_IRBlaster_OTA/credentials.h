@@ -1,5 +1,6 @@
 #pragma once
 
 // replace the ssid and password with what your WiFi Router uses
-const char* ssid     = "MillFlat_El_Rancho";
-const char* password = "140824500925";
+const char* ssid     = "Your_SSID";
+const char* password = "Your_Password";
+
