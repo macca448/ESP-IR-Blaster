@@ -44,7 +44,7 @@ I have included `Over-the-Air` update functionality to the project so after init
 
 #### Installed Upload Plug-ins  
 
-![Upload_plugin_details](https://github.com/user-attachments/assets/9bc6690e-4188-4a34-a424-9b374f6eb1de)
+![Upload_plugin_details](https://github.com/user-attachments/assets/26e2d658-de11-4b1f-b9a0-4292200608dd)
 
 
 <br>
