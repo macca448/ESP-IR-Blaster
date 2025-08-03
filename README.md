@@ -4,16 +4,18 @@ Use an ESP8266 or ESP32 to create a WiFi Infrared Blaster and send code using a 
 ## Sketch Source Project:
 [This is the Project](https://github.com/e-tinkers/esp32_ir_remote) that gave me the required functionality and AJAX script.
 
-**Note:** I stripped out all "HTTP_GET" functionality in my project as I only wanted to send "HTTP_POST" commands. If you need to pull data into your HTML like sensor readings then you'll need to look at the [core code source project](https://github.com/e-tinkers/esp32_ir_remote) for that detail.  
+**Note:** I stripped out all "HTTP_GET" functionality in my project as I only wanted to send "HTTP_POST" commands. If you need to pull data into your `HTML` like sensor readings then you'll need to look at the [core code source project](https://github.com/e-tinkers/esp32_ir_remote) for that detail.  
 
 ## Sketch Flow Basics
-In my sketch there is just a single task being the  `"void onBody()"` callback and this function is triggered by a HTML button press. There is javaScript that creates the `JASON` string when a button is pressed. In the string is the button's HTML ID and the button's description text. This description string isn't needed for functionality but was very handy debugging as I could see if the IR code emitted matched the function printed.  
+In my sketch there is just a single task being the  `"void onBody()"` callback and this function is triggered by a `HTML` button press. There is a `javaScript` that creates the `JASON` string when a button is pressed. 
 
-The button ID is the key as all the IR codes for the buttons live in a single array and the HTML ID is the array index position of the IR code for the button that was pressed. As there are three (3) protocols `“NEC, PANASONIC and RCMM”` the array is sorted in groups so I can assign protocol by ID/index number.  
+In the JSON string is the button's `HTML id#` and the button's `description` as text. This description isn't needed for functionality but was very handy for debugging as I could see if the IR code emitted matched the function printed in the Serial monitor.  
 
-This means on a button Press > Stringify ID and Name > Pass to “onBody” callback > parse JSON > check ID and set protocol > pass the switch case to emit IR code.
+The button `id#` is the key as all the IR codes for the buttons live in a single array and the `HTML id#` is the array index position of the IR code for the button that was pressed. As there are three (3) protocols `“NEC, PANASONIC and RCMM”` the array is sorted in groups which facilitates assigning protocol type by `ID/index` number.  
 
-**Minor stuff:** There are near 100 buttons and I used 9 x Buttons that load model pop-ups with buttons grouped by device and function. I call “FontAwesome” externally so I need internet access and this is for button icons. 
+To summerize, **Button Press > Stringify ID and Name > Pass to “onBody” callback > parse JSON > check ID and set protocol > pass the switch case to emit IR code**
+
+**Minor stuff:** There are near 100 buttons and I used 9 x Buttons that load model pop-ups with buttons grouped by device and function. I call “FontAwesome” externally for button icons  so I need internet access.  
 At the bottom of this page is a link to a short video showing the ESP-IR-Blaster in operation.
 
 <br>
@@ -37,8 +39,15 @@ First you need to make sure the Arduino IDE has support for your [ESP8266](https
 ### For Arduino IDE v1.8.19
 This older IDE still works and has two JAVA plug-ins that allow easy `data`folder upload to your `HTML` content to the controller. Here are links to instructions for the [ESP32](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/) and the [ESP8266](https://randomnerdtutorials.com/install-esp8266-filesystem-uploader-arduino-ide/) for adding this tool.
 
-### For Arduino IDE v2.x
-You'll note that I have `OTA` sample sketch's for both the `ESP8266` using `LittleFS` and `ESP32` using `SPIFFS`.
+### For Arduino IDE v2.2 and above
+I have included `Over-the-Air` update functionality to the project so after initial upload both updates and data folder contents can be updated via WiFi. I prefer to do initial deployment of entire project via Serial from the IDE. To do that you now need to add [this plug-in](https://github.com/earlephilhower/arduino-littlefs-upload/releases/tag/1.5.4) for `LittleFS` and for reference there is also one available for `SPIFFS` [here](https://github.com/espx-cz/arduino-spiffs-upload/releases/tag/1.1.5). To install these plug-ins follow the instructions [here](https://github.com/earlephilhower/arduino-littlefs-upload#installation)  
+
+#### Installed Upload Plug-ins  
+
+![Upload_plugin_details](https://github.com/user-attachments/assets/9bc6690e-4188-4a34-a424-9b374f6eb1de)
+
+
+<br>
 
 ## Tips
 ### (1) Randomness when capturing IR codes
